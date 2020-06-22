@@ -19,7 +19,7 @@ button.addEventListener('click', function(){
 function parseHex(){
     var Color = '#'
     var i;
-    for(i=0;i<8;i++){
+    for(i=0;i<6;i++){
        Color = Color + hexVars[parseInt(Math.random()*hexVars.length)]
     }
     return Color;

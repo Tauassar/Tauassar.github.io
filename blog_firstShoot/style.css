@@ -1,0 +1,154 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+.topSide{
+    margin-top: 0;
+    background-color: #F8F4F9;
+    color: #6B4B3E;
+    display:grid;
+}
+/*  Titile */
+.title{
+    display:flex;
+    
+}
+img.logo{
+    margin-left: 7%;
+    margin-right: 15%;
+    width: 180px;
+    height: 180px;
+}
+
+.mainName{
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+/* Top Navigation Bar*/
+nav{
+    background-color: #FFD6AF5a;
+    width: 100%;
+    margin: 0;
+    border: none;
+}
+nav ul{
+    height: 70px;
+    list-style-type: none;
+    overflow: hidden;
+    text-decoration: none;
+    margin-left: 10%;
+}
+nav ul li{
+    margin-left: 1%;
+    margin-right: 1%;
+    float: left;
+}
+
+nav ul li:hover{
+    color: #6B4B3f;
+    font-weight: bold;
+    background-color: #FFD6AF5b;
+}
+
+nav ul li a{
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    margin: 10px;
+    font-size: inherit;
+    color: inherit;
+}
+
+/*image carousel*/
+.carousel,
+.scroll-area {
+  max-width: 350px;
+  height: 350px;
+  margin: 0 auto;
+
+}
+
+.carousel {
+  margin: 0 auto;
+  scroll-snap-type:inline;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.scroll-area {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-area::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-area img{
+    width: 100%;
+    height: 100%;
+    
+    scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+  border-radius: 10px;
+  background: #eee;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+}
+    .carousel > a {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+}
+
+.carousel > a:active {
+  top: 1px;
+}
+.carousel > a:focus {
+  background: #000;
+}
+
+/*Main*/
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+    border: none;
+    background-color: #F8F4F9;
+    margin: 0;
+    padding: 0px;
+}
