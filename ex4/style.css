@@ -1,57 +1,65 @@
-html, body {
-    
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 0; height: 100%; overflow: hidden}
-
 body{
-    background-color: #BEA7E5;
+    background-color: #F8F4F9;
     font-family: sans-serif;
-}
-#fname{
+    padding:0;
+    margin:0;
     width: 100%;
-    height: 30px;
-    font-size: 2vw;
-    text-align: center;
+    height: 100%;
 }
 .container{
-    border-radius: 10%;
     position: absolute;
-    left: 20%;
-    line-height: 1.5;
-    font-weight: bold;
-    font-size: 2vw;
-    padding: 50px;
-    margin: 10%;
-    width: 30%;
-    background-color: #F8F4F9;
-    color: #6B4B3E;
-    text-align: center;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+    margin-top: 0.5%;
+    padding: 0;
+}
+#slide{
+    border-radius: 3%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#buttonPrev{
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    left: 5%;
+    border: none;
+    height: 50px;
+    width: 50px;
+    font-size: 3vw;
+    background-color: #ffffff01;
+    color: #0000002f;
+}
+#buttonPrev:hover{
+    background-color: #ffffff1a;
+    color: #000000af;
+}
+#buttonNext{
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    border: none;
+    right: 5%;
+    height: 50px;
+    width: 50px;
+    background-color: #ffffff01;
+    color: #0000002f;
+    font-size: 3vw;
+}
+#buttonNext:hover{
+    background-color: #ffffff1a;
+    color: #000000af;
 }
 .title{
     font-weight: bold;
-}
-#message{
-    margin-top: 1vw;
-    color: #BEA7E5;
-}
-.error{
-    display: none;
-}
-.show{
-    color: red;
-    display: block;
-}
-#button{
-    margin: 10px;
-    display: block;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
-    background-color: #C055F5;
-    width: 8vw;
-    font-size: 1.5vw;
-    color: white;
+    margin-bottom: 1.5vw;
+    font-size: 4vw;
+    font-family: sans-serif;
+    color: #6B4B3E;  
 }

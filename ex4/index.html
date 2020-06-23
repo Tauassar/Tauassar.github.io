@@ -6,16 +6,19 @@
        <link rel="stylesheet" type ="text/css" href="style.css">
    </head>	
    <body>
+       <p class="title">Image Slider</p>
        <div class='container'>
-           <div class="title">Pass a message to the box<br></div>
-           <form onsubmit="return false">
-              <input type="text" id="fname" name="fname" placeholder="Input text here"><br>
-           </form>
-           <button id="button">Submit</button>
-           <div class="error">Please Enter A Value To Pass</div>
-           <div class="deliver">Last Message Delivered</div>
-           <div id="message">HELLO WORLD</div>
-           <script src="script.js"></script>
+        <button id="buttonPrev">&#9668;</button>
+           <img id="slide" src="assets/img/1.jpg">
+        <button id="buttonNext">&#9658;</button>
+<!--
+           <img id="slide" src="assets/img/2.jpg">
+           <img id="slide" src="assets/img/3.jpg">
+           <img id="slide" src="assets/img/4.jpg">
+           <img id="slide" src="assets/img/5.jpg">
+           <img id="slide" src="assets/img/6.jpg">
+-->
        </div>
+        <script src="script.js"></script>
    </body>	
 </html>
