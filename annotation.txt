@@ -2,4 +2,6 @@ example 1 - hex color generator
 example 2 - quote generator
 example 3 - input message and Pass it to The screen
 example 4 - image slider
- 
+example 5 - Filter Project
+
+https://jsbeginners.com/javascript-projects-for-beginners/
