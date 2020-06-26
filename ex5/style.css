@@ -193,7 +193,7 @@ nav ul a{
     font-weight: bold;
     color: #52C005;
     margin: 0 20px;
-    font-size: 2vw;
+    font-size: 110%;
     border-radius: 7%;
     width: 10vw;
     height: 7vh;
@@ -238,11 +238,7 @@ nav ul a{
     transition: all 1s ease-in-out
 /*    transform: translate(10px, 10px);*/
 }
-.item_avatar:hover{
-    transform: scale(1.03);
-/*    transform: translate(10px, 10px);*/
-}
-.text{
+#text{
     border-top: 4px solid rgba(155,125,82,0.6);
     font-size: 90%   ;
     display: flex;
@@ -254,10 +250,6 @@ nav ul a{
     justify-content: space-around;
     transition: background-color 0.25s ease-in-out;
 }
-.text:hover{
-    background-color: #F8F4F9f6;
-    border-radius: 0px 0px 0px 10px;
-}
 .itemName{
     float: left;
     margin-left: 10px;
@@ -267,4 +259,12 @@ nav ul a{
     font-size: 110%;
     float: right;
     margin-right: 10px;
+}
+.personal_item:hover .item_avatar {
+    transform: scale(1.03);
+/*    transform: translate(10px, 10px);*/
+}
+.personal_item:hover #text {
+    background-color: #F8F4F9f6;
+    border-radius: 0px 0px 0px 10px;
 }
