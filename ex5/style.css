@@ -41,6 +41,7 @@ nav{
     margin: 0;
     border: none;
     background-color: #3b1f09;
+    z-index: 2;
 }
 .list{
     display: block;
@@ -221,15 +222,29 @@ nav ul a{
     width: 20vw;
     height: 50vh;
     background-color: #C49E85;
+    overflow: hidden;
 }
-.item_avatar{
+.img_container{
     width: 100%;
     height: 43vh;
-    object-fit: cover;   
+    overflow: hidden;
+}
+.item_avatar{
+    background-color: floralwhite;
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    z-index: 0;
+    transition: all 1s ease-in-out
+/*    transform: translate(10px, 10px);*/
+}
+.item_avatar:hover{
+    transform: scale(1.03);
+/*    transform: translate(10px, 10px);*/
 }
 .text{
     border-top: 4px solid rgba(155,125,82,0.6);
-    font-size: 3.5vh;
+    font-size: 90%   ;
     display: flex;
     width: 100%;
     height: 6.2vh;
@@ -248,7 +263,8 @@ nav ul a{
     margin-left: 10px;
 }
 .itemprice{    
-    font-size: 4vh;
+    width: 20%;
+    font-size: 110%;
     float: right;
     margin-right: 10px;
 }
