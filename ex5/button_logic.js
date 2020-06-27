@@ -36,7 +36,7 @@
             if(beers[i].fagot){console.log('fagot chosen');createCard(i);}
         }
       }
-        createCard(i);
+        addLink();
     })
   })
 })();

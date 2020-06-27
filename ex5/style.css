@@ -223,6 +223,7 @@ nav ul a{
     height: 50vh;
     background-color: #C49E85;
     overflow: hidden;
+    cursor: pointer;
 }
 .img_container{
     width: 100%;

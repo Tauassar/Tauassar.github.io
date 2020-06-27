@@ -22,7 +22,7 @@
             <div class='info'>
                 <img src="assets/img/icons/phone.png" class="icon">
                 <p>+000000</p>
-                <div class="cart_box"><img src="assets/img/icons/cart.png" id="cart_icon_before">
+                <div class="cart_box"><img src="assets/img/icons/cart_ico.png" id="cart_icon_before">
                     <img src="assets/img/icons/cart_hover.png" id="cart_icon_after">
                 <p>0 Items - $0.0</p></div>
             </div>
@@ -46,21 +46,25 @@
     <button class="btn_filter fagot">Гейское</button>
            </div>
                        
-            <div id="cards">
+            <div id="cards onload='cartlogic()'">
            
 <!--
-                    <div class="personal_item">
-                        <div class="img_container">
-                        <img class="item_avatar" src="assets/img/items/1.jpeg" alt='avatar'>
+                    <a id="buy_item">
+                        <div class="personal_item">
+                            <div class="img_container">
+                            <img class="item_avatar" src="assets/img/items/1.jpeg" alt='avatar'>
+                            </div>
+                            <div class='text'>
+                                <h4 class="itemName">name</h4>
+                                <h4 class='itemprice'>price</h4>
+                            </div>
                         </div>
-                        <div class='text'>
-                            <h4 class="itemName">name</h4>
-                            <h4 class='itemprice'>price</h4>
-                        </div>
-                    </div>
+                    </a>
 -->
                 </div>
             </div>
+       
+   <script src="cart_logic.js"></script>
     <script src="script.js"></script>
    <script src="button_logic.js"></script>
     </body>	

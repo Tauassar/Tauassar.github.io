@@ -15,17 +15,17 @@ var beers=[{name:'RickBeer dark', price: 20, img: '1.jpeg', dark:true, fagot:fal
            {name:'Сидр Chesters со вкусом яблока (полусухой)', price: 30, img: '10.jpg', dark:false, fagot:true, bottle:true},
 ];
 
-
-var i;
-for(i=0; i<beers.length; i++){
-    createCard(i);
-}
+//Initial grid
+    var i;
+    for(i=0; i<beers.length; i++){
+        createCard(i);
+    }
+    addLink();
 
 function createCard(x){
    if((x<beers.length)&&(x>=0)) {
         const imgDiv=document.createElement('div');
         imgDiv.setAttribute('class', 'img_container');
-    //    setClass(x,imgDiv)
 
         const image=document.createElement('img');
         image.setAttribute('class','item_avatar');
@@ -50,8 +50,13 @@ function createCard(x){
         pItemDiv.setAttribute('class', 'personal_item');    
         pItemDiv.appendChild(imgDiv);
         pItemDiv.appendChild(textDiv);
+       
+       
+        const aLink=document.createElement('a');
+        aLink.setAttribute('id', 'buy_item');
+        aLink.appendChild(pItemDiv);
 
-        cards.appendChild(pItemDiv);
+        cards.appendChild(aLink);
     }
 }
 
