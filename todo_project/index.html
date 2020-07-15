@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>ToDo_List</title>
+  </head>
+
+  <body>
+
+<div class="row justify-content-center">
+  <div class="col-lg-6 col-sm-10 pt-5" id="center">
+    <h1 class="text-center mb-4 font-weight-bold">ToDo list project</h1>
+
+    <div class="container px-4">
+<form class="form need-validation" id="testForm">
+  <div class="form-group">
+  <div class='row'>
+    <div class="col-10">
+      <input type="text" name="newItem" class="form-control" placeholder="Add new item to the list" id="newVal" autocomplete="off" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="col-xs|sm|md|lg|xl-1">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</form>
+    </div>
+
+    <ul class="list-group mt-3 px-4 text-decoration-none" id="itemList">
+      <li class="list-group-item" id='item1'>
+        <button type="button" class="close" data-dismiss="alert">&#9842;</button>
+        <a href="#item1">first task</a>
+      </li>
+      <li class="list-group-item" id='item1'>
+        <button type="button" class="close" data-dismiss="alert">&#9842;</button>
+        <a href="#item2">second task</a>
+      </li>
+      <li class="list-group-item" id='item1'>
+        <button type="button" class="close" data-dismiss="alert">&#9842;</button>
+        <a href="#item3">third task</a>
+      </li>
+      <li class="list-group-item" id='item1'>
+        <button type="button" class="close" data-dismiss="alert">&#9842;</button>
+        <a href="#item4">fourth task</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                    <!-- scripts -->
+
+      <script type="text/javascript">
+
+          //init script
+          $(document).ready(()=>{
+            add_click_logic();
+            $('#submit_button').click(()=>{submit_action()})
+            add_delete_button();
+          })
+          //block refreshing on submit
+          $(document).on('submit', '#testForm', function() {
+            // do your things
+            return false;
+           });
+      </script>
+
+    <script type="text/javascript">
+
+    function add_click_logic(){
+        $('.list-group-item').click(function(element){
+          $(this).toggleClass('checked')
+          })
+      }
+                            //add new item
+      //enter pressed
+      $('#newVal').keyup(function(e){
+        if(e.keyCode == 13)
+        {
+          submit_action();
+        }
+      });
+      //submit button logic
+      function submit_action(){
+        if($('#newVal')[0].checkValidity()==true){
+        var txt='<li class="list-group-item" id=\'item1\'><button type="button" class="close" data-dismiss="alert">&#9842;</button><a href="#item4">'+$('#newVal').val()+'</a></li>';
+        $('#itemList').prepend(txt);
+        $('#newVal').val('')
+        $('.list-group-item').off('click')
+        $('.close').off('click')
+        console.log('submitted');
+        add_click_logic();
+        add_delete_button()}
+      }
+
+      function add_delete_button(){
+        $('.close').click(function(e){
+          $(this).parent().remove()
+          console.log('removed');
+        })
+      }
+    </script>
+  </body>
+</html>

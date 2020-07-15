@@ -1,0 +1,45 @@
+body {
+  overflow-x: hidden;
+  background: #9408f7;
+  background: linear-gradient(108deg, rgba(148, 8, 247, 0.455) 0%, rgba(148, 8, 247, 0.348) 43%, rgba(170, 247, 166, 0.355) 100%);
+
+ }
+
+h1 {
+  color: #736996; }
+
+#submit_button {
+  background-color: #8831ce;
+  border: none; }
+
+#center {
+  height: 100vh; }
+
+.checked {
+  text-decoration: line-through;
+  background-color: #DADADA56; }
+
+.close {
+  font-size: 6vh;
+  transition: color 0.25s ease-in-out; }
+
+.close:hover {
+  color: red; }
+
+form-control:invalid {
+  border: 2px dashed red; }
+
+form-control:valid {
+  border: 2px solid black; }
+
+a {
+  color: #736996;
+  font-size: 4vh;
+  transition: color 0.25s ease-in-out;
+  text-decoration: none; }
+
+li {
+  transition: color 0.4s ease-in-out; }
+
+li:hover {
+  background-color: #FAFAFA; }
