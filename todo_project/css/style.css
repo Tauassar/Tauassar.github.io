@@ -1,8 +1,8 @@
 body {
   overflow-x: hidden;
-  background: #9408f7;
   background: linear-gradient(108deg, rgba(148, 8, 247, 0.455) 0%, rgba(148, 8, 247, 0.348) 43%, rgba(170, 247, 166, 0.355) 100%);
-
+  background-attachment: fixed;
+  background-position: center;
  }
 
 h1 {
@@ -39,7 +39,4 @@ a {
   text-decoration: none; }
 
 li {
-  transition: color 0.4s ease-in-out; }
-
-li:hover {
-  background-color: #FAFAFA; }
+  transition: color 0.4s ease-in-out,  background-color 0.4s ease-in-out; }
