@@ -1,0 +1,68 @@
+
+      // BUILD CARD
+@mixin card--bg-img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+@mixin card--item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+    font-family: Gilroy-Light, arial;
+    color: $card_text_color;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+@mixin card--body{
+    height: inherit;
+    line-height: 0.35;
+    background-color: #C3BEBD40;
+}
+@mixin card--title{
+    color: $sky_blue;
+    font-size: 1.3vw;
+    font-weight: 700;
+}
+@mixin card--price{
+  font-size: 1vw;
+  color: #F95E5E;
+}
+@mixin card--old-price{
+    font-size: 1vw;
+    text-decoration:line-through;
+    color: $card_text_color;
+}
+
+
+    // color Container
+@mixin main-content--filled-container($color, $height){
+  padding-top: $height/3;
+  background-color: $color;
+  height: $height;
+  color: white;
+  -webkit-text-stroke: 0.5px white;
+}
+
+      // image container
+  @mixin main-content--image-container($height, $url){
+    color: white;
+    height: $height;
+    width: 100%;
+    background-image: url($url);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  @mixin image-container--text-wrapper{
+    line-height: 0.75;
+    letter-spacing: 3px;
+    position: relative;
+    top: 45%;
+  }

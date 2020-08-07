@@ -3,5 +3,8 @@ example 2 - quote generator
 example 3 - input message and Pass it to The screen
 example 4 - image slider
 example 5 - Filter Project
+test-app - calculator on react
+shop_project - unfinished beer shop
+todo_project - todo list 
 
 https://jsbeginners.com/javascript-projects-for-beginners/

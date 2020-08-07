@@ -1,0 +1,21 @@
+{
+  "name": "shop_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint",
+    "prettier" : "prettier",
+    "run_sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-text-stroke": "^1.0.1"
+  },
+  "dependencies": {
+    "eslint": "^7.5.0",
+    "prettier": "^2.0.5"
+  }
+}

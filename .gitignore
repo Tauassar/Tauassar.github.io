@@ -1,3 +1,7 @@
-todo_project/node_modules/*
-todo_project/run.atom-live-server.json
+/todo_project/node_modules/*
+/ex_4/node_modules/*
+/test-app/node_modules/*
+/*.json
+/shop_project/node_modules/*
+/todo_project/run.atom-live-server.json
 

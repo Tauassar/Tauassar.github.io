@@ -1,0 +1,54 @@
+.display{
+  display: block;
+  background-color: rgb(133,134,148);
+  color: white;
+  font-size: 15vh;
+  height: 20vh;
+  width: 100%;
+  text-align: right;
+}
+.display div{
+  margin-right: 20px;
+}
+.keyboard{
+  display: flex;
+  width: 100vw;
+  height: 80vh;
+  text-align: center;
+}
+
+.grid-container-numbers {
+  width: 75vw;
+  height: 80vh;
+  background-color: blue;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.grid-container-numbers .GridButton{
+  background-color: #e0e0e0;
+  height:16vh;
+  font-size: 3.5rem;
+  border: 0.5px solid #858694;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-container-controls {
+  width: 25vw;
+  height: 80vh;
+  background-color: blue;
+  display: inline-grid;
+}
+.grid-container-controls .GridButton{
+  background-color: #f5923e;
+  color: white;
+  height:16vh;
+  font-size: 3.5rem;
+  border: 0.5px solid #858694f5;
+  padding: 20px;
+  text-align: center;
+}
+
+#zero{
+  grid-column: 1 / 3;
+}

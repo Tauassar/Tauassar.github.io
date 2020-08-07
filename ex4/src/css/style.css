@@ -1,0 +1,68 @@
+@import "fonts.css";
+@import "~normalize.css";
+
+body{
+    background-color: #F8F4F9;
+    font-family: 'Rowdies', sans-serif;
+    padding:0;
+    margin:0;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+    margin-top: 0.5%;
+    padding: 0;
+}
+#slide{
+    border-radius: 3%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#buttonPrev{
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    left: 5%;
+    border: none;
+    height: 50px;
+    width: 50px;
+    font-size: 3vw;
+    background-color: #ffffff01;
+    color: #0000002f;
+}
+#buttonPrev:hover{
+    background-color: #ffffff1a;
+    color: #000000af;
+}
+#buttonNext{
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    border: none;
+    right: 5%;
+    height: 50px;
+    width: 50px;
+    background-color: #ffffff01;
+    color: #0000002f;
+    font-size: 3vw;
+}
+#buttonNext:hover{
+    background-color: #ffffff1a;
+    color: #000000af;
+}
+.title{
+    font-family: 'Rowdies', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5vw;
+    font-size: 4vw;
+    color: #6B4B3E;
+}
