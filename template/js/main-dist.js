@@ -1,1 +1,1 @@
-console.log("hello world");
+!function(){for(element in img_elements=document.getElementsByClassName("ibg"),img_elements)img_url=element.getAttribute("url"),element.style.background=`url(${img_url})`}(),document.getElementsByClassName("wrapper").classList.toggle("loaded")((function(){document.getElementsByClassName("icon-menu")[0].addEventListener("click",(()=>{this.classList.toggle("active"),document.getElementsByClassName("menu_body")[0].classList.toggle("active"),document.getElementsByTagName("body").classList.toggle("lock")}))}))();
