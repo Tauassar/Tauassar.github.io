@@ -4,5 +4,6 @@
 /*.json
 /shop_project/node_modules/*
 /todo_project/run.atom-live-server.json
-vscode/*
+.vscode/*
+template/.vscode/*
 

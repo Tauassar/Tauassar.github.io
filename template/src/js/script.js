@@ -9,7 +9,9 @@
 })();
 
 
-document.getElementsByClassName('wrapper').classList.toggle('loaded')
+Array.prototype.map.call(document.getElementsByClassName('wrapper'), (elem) => {
+    elem.classList.toggle('loaded')
+})
 
 (function() {
     document.getElementsByClassName('icon-menu')[0].addEventListener("click", () => {
