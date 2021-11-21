@@ -1,3 +1,3 @@
 // prettier-ignore
-@@include('alert.js')
+@@include('slider.js')
 @@include('webp_processing.js')

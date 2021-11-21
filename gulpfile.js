@@ -15,7 +15,7 @@ const path = {
         html: [source_folder + '/*.html', "!" + source_folder + '/_*.html'],
         css: source_folder + '/scss/style.scss',
         js: source_folder + '/js/script.js',
-        img: source_folder + '/img/**/*.{jpg, png, svg, gif, ico, webp}',
+        img: source_folder + '/img/**/*.{png, jpg, svg, gif, ico, webp}',
         fonts: source_folder + '/fonts/*.ttf'
     },
     watch: {
@@ -38,10 +38,6 @@ let { src, dest } = require('gulp'),
     clean_css = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify-es').default,
-    imagemin = require('gulp-imagemin'),
-    webp = require('gulp-webp'),
-    webp_html = require('gulp-webp-html'),
-    webp_css = require('gulp-webpcss'),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
     fonter = require('gulp-fonter'),
@@ -60,7 +56,6 @@ function browserSync(params) {
 function html() {
     return src(path.src.html)
         .pipe(fileinclude())
-        .pipe(webp_html())
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream())
 }
@@ -75,7 +70,6 @@ function css() {
             overrideBrowserslist: ['last 5 versions'],
             cascade: true
         }))
-        .pipe(webp_css())
         .pipe(dest(path.build.css))
         .pipe(clean_css())
         .pipe(rename({
@@ -101,17 +95,8 @@ function js() {
 
 function images() {
     return src(path.src.img)
-        .pipe(webp({
-            quality: 70
-        }))
         .pipe(dest(path.build.img))
         .pipe(src(path.src.img))
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            interlaced: true,
-            optimizationLevel: 3
-        }))
         .pipe(dest(path.build.img))
         .pipe(browsersync.stream())
 }

@@ -11,8 +11,463 @@
 
 @import "fonts";
 
-body {
-    background-color: ghostwhite;
-    font-style: 15px;
-    display: flex;
+/*Обнуление*/
+* {
+padding: 0;
+margin: 0;
+border: 0;
 }
+
+*,
+*:before,
+*:after {
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+:focus,
+:active {
+outline: none;
+}
+
+a:focus,
+a:active {
+outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+display: block;
+}
+
+html,
+body {
+height: 100%;
+width: 100%;
+font-size: 100%;
+line-height: 1;
+font-size: 14px;
+font-family: Lato;
+-ms-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+font-family: Lato;
+}
+
+input::-ms-clear {
+display: none;
+}
+
+button {
+cursor: pointer;
+}
+
+button::-moz-focus-inner {
+padding: 0;
+border: 0;
+}
+
+a,
+a:visited {
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+ul li {
+list-style: none;
+}
+
+img {
+vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-size: inherit;
+font-weight: 400;
+}
+
+
+// main content
+// first block
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 18px;
+    background-color: #151027;
+    font-family: 'Gilroy';
+}
+
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.container {
+    max-width: 1130px;
+    margin: 0 auto;
+}
+.fullpage {
+    width: 100vw;
+    height: 100vh;
+}
+.designer {
+    background-color: #FFFFFF;
+    text-align: center;
+    color: #151027;
+    &.container {
+        max-width: 620px;
+        padding: 0 410px;
+        margin: 0 auto;
+    }
+}
+.header__container {
+    padding: 40px 112px;
+}
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    max-width: 59px*3+120px*2;
+    margin: 0 auto;
+}
+.header-link {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.005em;
+    text-decoration: none;
+    color: #151027;
+}
+.designer__body {
+    padding: 130px - 40px;
+}
+.designer-name {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.005em;
+}
+.title {
+    font-size: 64px;
+    font-family: 'Gilroy-bold';
+    line-height: 79px;
+    letter-spacing: 0.005em;
+    font-weight: bold;
+}
+
+.designer__title {
+    padding: 12px 0 0 0;
+}
+.designer__content {
+    padding: 16px 0 0 0;
+    max-width: 620px;
+    margin: 0 auto;
+}
+.text {
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.005em;
+}
+.designer__hashtags {
+    max-width: 80px+64px+64px+53px+36px*3;
+    margin: 0 auto;
+    padding: 16px 0 0 0;
+}
+.designer__hashtag-menu {
+    display: flex;
+    justify-content: space-between;
+}
+.hashtag {
+    color: #1F62D4;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+// second block
+.univero {
+    display: flex;
+    flex-direction: row;
+    color: #FFFFFF;
+    background: linear-gradient(126.08deg, #006EE7 0%, #4950B7 100%);
+}
+.univero__body {
+    padding: 60px 162px 0 120px;
+    max-width: 660px;
+
+    &.title {
+        font-family: 'Gilroy-bold';
+        font-size: 72px;
+        line-height: 89px;
+        letter-spacing: 0.005em;
+    }
+}
+.univero__logo {
+    height: 30px;
+    width: 120px;
+    background-image: url('../img/001-univero.svg');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+}
+.univero__content {
+    padding: 70px 0 0 0;
+}
+.univero__text {
+    padding: 10px 0 0 0;
+}
+.univero__screenshots {
+    padding: 80px 0 0 0;
+    position: relative;
+    max-width: 620px;
+}
+.univero__desktop-screenshot {
+    z-index: 1;
+}
+.univero__mobile-screenshot {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: -10%;
+}
+// UNIUP
+.uniup {
+    display: flex;
+    flex-direction: row;
+    color: #063551;
+    background: linear-gradient(126.08deg, #FBA198 0%, #AC411D 100%);
+}
+.uniup__body {
+    padding: 60px 162px 0 120px;
+    max-width: 660px;
+
+    &.title {
+        font-family: 'Gilroy-bold';
+        font-size: 72px;
+        line-height: 89px;
+        letter-spacing: 0.005em;
+    }
+}
+.uniup__logo {
+    height: 45px;
+    width: 110px;
+    background-image: url('../img/002-uniup.svg');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+}
+.uniup__content {
+    padding: 70px 0 0 0;
+}
+.uniup__text {
+    padding: 10px 0 0 0;
+}
+.uniup__screenshots {
+    padding: 80px 0 0 0;
+    position: relative;
+}
+.uniup__desktop-screenshot {
+    z-index: 1;
+}
+
+// typipay
+.typipay {
+    display: flex;
+    min-height: 440px;
+    flex-direction: row;
+    color: #FFFFFF;
+    background-image: url('../img/4.png'), linear-gradient(126.08deg, #A2D7FD 0%, #6DC0FE 100%);;
+    background-repeat: no-repeat;
+    background-position: top 0px right 7%;
+}
+.typipay__body {
+    padding: 60px 162px 0 120px;
+    max-width: 660px;
+
+    &.title {
+        font-family: 'Gilroy-bold';
+        font-size: 72px;
+        line-height: 89px;
+        letter-spacing: 0.005em;
+    }
+}
+.typipay_logo {
+    display: flex;
+    width: 100%;
+}
+.typipay__logo_logo {
+    height: 30px;
+    width: 30px;
+    background-image: url('../img/003-typipay_logo.svg');
+    background-repeat: no-repeat;
+
+}
+.typipay__logo_text {
+    height: 30px;
+    width: 100px;
+    background-image: url('../img/004-typipay_text.svg');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+}
+.typipay__content {
+    padding: 60px 0 0 0;
+}
+.typipay__text {
+    padding: 10px 0 0 0;
+}
+.typipay__screenshots {
+    padding: 80px 0 0 7.5%;
+    position: relative;
+    width: 100%;
+}
+.typipay__card-screenshot {
+    z-index: 20;
+}
+.typipay__mobile-screenshot {
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    right: 30%;
+}
+
+// animakuro
+.animakuro {
+    display: flex;
+    flex-direction: row;
+    color: #FFFFFF;
+    background: linear-gradient(126.08deg, #42525F 0%, #09121A 100%);
+}
+.animakuro__body {
+    padding: 60px 162px 0 120px;
+    max-width: 660px;
+
+    &.title {
+        font-family: 'Gilroy-bold';
+        font-size: 72px;
+        line-height: 89px;
+        letter-spacing: 0.005em;
+    }
+}
+.animakuro__logo {
+    height: 30px;
+    width: 120px;
+    background-image: url('../img/005-animakuro.svg');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+}
+.animakuro__content {
+    padding: 70px 0 0 0;
+}
+.animakuro__text {
+    padding: 10px 0 0 0;
+}
+.animakuro__screenshots {
+    padding: 80px 0 0 0;
+    position: relative;
+    max-width: 620px;
+}
+.animakuro__desktop-screenshot {
+    z-index: 1;
+}
+.animakuro__mobile-screenshot {
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: -10%;
+}
+// archive
+.archive {
+    display: flex;
+    flex-direction: row;
+    color: #FFFFFF;
+    background: linear-gradient(126.08deg, #16E7BC 0%, #32B9BA 100%);
+}
+.archive__body {
+    padding: 60px 162px 0 120px;
+    max-width: 660px;
+
+    &.title {
+        font-family: 'Gilroy-bold';
+        font-size: 72px;
+        line-height: 89px;
+        letter-spacing: 0.005em;
+    }
+}
+.archive__content {
+    padding: 70px 0 0 0;
+}
+.archive__text {
+    padding: 10px 0 0 0;
+}
+.archive__screenshots {
+    padding: 80px 0 0 0;
+    position: relative;
+    max-width: 620px;
+}
+.archive__desktop-screenshot {
+    z-index: 1;
+}
+.archive__mobile-screenshot {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: -10%;
+}
+
+// footer
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+    justify-content: center;
+    align-items: center;
+}
+.footer__socials {
+    display: flex;
+    padding: 30px 0;
+    width: 12px*2+35px*3;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.footer_whatsapp {
+    height: 36px;
+    width: 36px;
+    background-image: url('../img/008-WhatsApp.svg');
+    background-repeat: no-repeat;
+}
+.footer_linkedin {
+    height: 36px;
+    width: 36px;
+    background-image: url('../img/006-LinkedIn.svg');
+    background-repeat: no-repeat;
+}
+.footer_telegram {
+    height: 36px;
+    width: 36px;
+    background-image: url('../img/007-Telegram.svg');
+    background-repeat: no-repeat;
+}
+.footer_email {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.005em;
+}
+.email-link{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+@import "slider";
