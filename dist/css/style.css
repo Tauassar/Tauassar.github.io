@@ -483,6 +483,7 @@ body {
   color: #FFFFFF;
   background: -o-linear-gradient(323.92deg, #16E7BC 0%, #32B9BA 100%);
   background: linear-gradient(126.08deg, #16E7BC 0%, #32B9BA 100%);
+  height: 350px;
 }
 
 .archive__body {
@@ -506,9 +507,10 @@ body {
 }
 
 .archive__screenshots {
-  padding: 80px 0 0 0;
+  padding: 30px 20px;
+  width: 100%;
+  height: auto;
   position: relative;
-  max-width: 620px;
 }
 
 .archive__desktop-screenshot {
@@ -587,18 +589,23 @@ body {
 }
 
 .slider {
-  margin: 80px 0;
-  height: 200px;
+  height: 100%;
   display: block;
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  position: relative;
   width: 100%;
+  position: relative;
+}
+
+.slider img {
+  top: 20%;
+  left: 35%;
 }
 
 .slider img {
   display: inline-block;
-  width: 300px;
+  width: 30%;
+  height: auto;
   position: absolute;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -609,4 +616,34 @@ body {
 
 .slider img.active {
   z-index: 4;
+}
+
+body {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  top: 20%;
+  left: 10%;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome, Edge, Opera and Firefox */
 }
