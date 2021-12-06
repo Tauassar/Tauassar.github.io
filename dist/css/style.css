@@ -231,6 +231,12 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+.animate * {
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
 .univero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -586,6 +592,37 @@ body {
 .email-link {
   text-decoration: none;
   color: #FFFFFF;
+}
+
+.active {
+  border-radius: 10px;
+  -webkit-transform: scale3d(0.95, 0.85, 1);
+          transform: scale3d(0.95, 0.85, 1);
+}
+
+.active .body,
+.active .mobile-screenshot {
+  -webkit-transform: scale3d(1.0526, 1.18, 1);
+          transform: scale3d(1.0526, 1.18, 1);
+}
+
+.active .desktop-screenshot {
+  -webkit-transform: translate(-5px, 15px);
+      -ms-transform: translate(-5px, 15px);
+          transform: translate(-5px, 15px);
+}
+
+.active .desktop-screenshot img {
+  -webkit-transform: scale3d(1.0526, 1.18, 1);
+          transform: scale3d(1.0526, 1.18, 1);
+}
+
+.dark_bg {
+  background-color: #151027;
+}
+
+section {
+  overflow: hidden;
 }
 
 .slider {

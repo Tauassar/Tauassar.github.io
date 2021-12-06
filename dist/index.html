@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href='./img/favicon.ico'/>
     <title>Yersain Kenesbekov's Portfolio</title>
 </head>
     <body>
         <div class="wrapper">
-            <main class="page">
-                <section class="designer fullpage">
+            <main class="page animate" data-scroll-container>
+                <section class="designer fullpage back-to-top" id="first-page" data-scroll-section>
                     <div class="container">
                         <div class="header__container">
                             <ul class="header-menu">
                                 <a href="#" class="header-link"><li class="header__menu-link">Обо мне</li></a>
                                 <a href="#contacts" class="header-link"><li class="header__menu-link">Контакты</li></a>
-                                <a href="#projects" class="header-link"><li class="header__menu-link">Проекты</li></a>
+                                <a href="#univero" class="header-link"><li class="header__menu-link">Проекты</li></a>
                             </ul>
                         </div>
                         <div class="designer__body">
@@ -26,7 +27,7 @@
                             <div class="designer__title title">
                                 <h1>UX/UI дизайнер</h1>
                             </div>
-                            <div class="designer__content text">
+                            <div class="designer__content text" data-scroll data-scroll-repeat data-scroll-call="toggleBackToTop">
                                 <p>Привет! Я дизайнер который раньше был програмистом. В работе стараюсь находить баланс между чистым и продуманным интерфейсомю. Помогаю стартапам, агенствам и фрилансерам. Основным инструментом явлляется Figma, но иногда заглядываю в Photoshop и Illustrator. 
                                     Буду рад помочь вывести ваш проект на новый уровень!</p>
                             </div>
@@ -41,8 +42,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="univero" id="projects">
-                    <div class="univero__body">
+                <section class="univero" id="univero" data-scroll-section data-scroll data-scroll-repeat data-scroll-call="toggleActive">
+                    <div class="univero__body body">
                         <div class="univero__logo"></div>
                         <div class="univero__content">
                             <div class="univero__title title">
@@ -54,16 +55,16 @@
                         </div>
                     </div>
                     <div class="univero__screenshots">
-                        <div class="univero__desktop-screenshot">
+                        <div class="univero__desktop-screenshot desktop-screenshot">
                             <img src="img/1.png" alt="desktop-view">
                         </div>
-                        <div class="univero__mobile-screenshot">
+                        <div class="univero__mobile-screenshot mobile-screenshot">
                             <img src="img/2.png" alt="mobile-view">
                         </div>
                     </div>
                 </section>
-                <section class="uniup">
-                    <div class="uniup__body">
+                <section class="uniup" id="uniup" data-scroll-section data-scroll data-scroll-repeat data-scroll-call="toggleActive">
+                    <div class="uniup__body body">
                         <div class="uniup__logo"></div>
                         <div class="uniup__content">
                             <div class="uniup__title title">
@@ -75,13 +76,13 @@
                         </div>
                     </div>
                     <div class="uniup__screenshots">
-                        <div class="uniup__desktop-screenshot">
+                        <div class="uniup__desktop-screenshot desktop-screenshot">
                             <img src="img/3.png" alt="desktop-view">
                         </div>
                     </div>
                 </section>
-                <section class="typipay">
-                    <div class="typipay__body">
+                <section class="typipay" id="typipay" data-scroll-section data-scroll data-scroll-repeat data-scroll-call="toggleActive">
+                    <div class="typipay__body body">
                         <div class="typipay_logo">
                             <div class="typipay__logo_logo"></div>
                             <div class="typipay__logo_text"></div>
@@ -96,16 +97,16 @@
                         </div>
                     </div>
                     <div class="typipay__screenshots">
-                        <div class="typipay__card-screenshot">
+                        <div class="typipay__card-screenshot desktop-screenshot">
                             <img src="img/5.png" alt="desktop-view">
                         </div>
-                        <div class="typipay__mobile-screenshot">
+                        <div class="typipay__mobile-screenshot mobile-screenshot">
                             <img src="img/6.png" alt="desktop-view">
                         </div>
                     </div>
                 </section>
-                <section class="animakuro">
-                    <div class="animakuro__body">
+                <section class="animakuro" id="animakuro" data-scroll-section data-scroll data-scroll-repeat data-scroll-call="toggleActive">
+                    <div class="animakuro__body body">
                         <div class="animakuro__logo"></div>
                         <div class="animakuro__content">
                             <div class="animakuro__title title">
@@ -117,15 +118,15 @@
                         </div>
                     </div>
                     <div class="animakuro__screenshots">
-                        <div class="animakuro__desktop-screenshot">
+                        <div class="animakuro__desktop-screenshot desktop-screenshot">
                             <img src="img/7.png" alt="desktop-view">
                         </div>
-                        <div class="animakuro__mobile-screenshot">
+                        <div class="animakuro__mobile-screenshot mobile-screenshot">
                             <img src="img/8.png" alt="mobile-view">
                         </div>
                     </div>
                 </section>
-                <section class="archive">
+                <section class="archive" id="archive" data-scroll-section data-scroll data-scroll-repeat data-scroll-call="toggleActive">
                     <div class="archive__body">
                         <div class="archive__content">
                             <div class="archive__title title">

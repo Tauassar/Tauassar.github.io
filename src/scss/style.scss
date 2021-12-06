@@ -194,6 +194,9 @@ body {
     color: #1F62D4;
     font-family: 'Source Sans Pro', sans-serif;
 }
+.animate * {
+    transition: all 1s;
+}
 // second block
 .univero {
     display: flex;
@@ -471,5 +474,26 @@ body {
     color: #FFFFFF;
 }
 
+.active{
+    border-radius: 10px;
+    transform: scale3d(0.95, 0.85, 1);
+    .body, .mobile-screenshot{
+        transform: scale3d(1.0526, 1.18, 1);
+    }
+    .desktop-screenshot{
+        transform: translate(-5px, 15px);
+        img{
+            transform: scale3d(1.0526, 1.18, 1);
+        }
+    }
+}
+
+.dark_bg {
+    background-color: #151027;
+}
+
+section{
+    overflow: hidden;
+}
 
 @import "slider";
