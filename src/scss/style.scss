@@ -1,3 +1,12 @@
+// CONSTANTS
+$mobile_min: 320px;
+$mobile: 750px;
+$tablet: 1050px;
+$laptop: 1200px;
+$desktop: 1300px;
+$extra_large: 1600px;
+
+
 @mixin font($font_name, $file_name, $weight, $style) {
 
     @font-face {
@@ -104,6 +113,8 @@ font-weight: 400;
 
 // main content
 // first block
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -120,6 +131,7 @@ body {
 
 .container {
     max-width: 1130px;
+    height: 100%;
     margin: 0 auto;
 }
 .fullpage {
@@ -154,6 +166,10 @@ body {
 }
 .designer__body {
     padding: 130px - 40px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .designer-name {
     font-size: 24px;
@@ -205,7 +221,7 @@ body {
     background: linear-gradient(126.08deg, #006EE7 0%, #4950B7 100%);
 }
 .univero__body {
-    padding: 60px 162px 0 120px;
+    // padding: 60px 162px 0 120px;
     max-width: 660px;
 
     &.title {
@@ -251,7 +267,7 @@ body {
     background: linear-gradient(126.08deg, #FBA198 0%, #AC411D 100%);
 }
 .uniup__body {
-    padding: 60px 162px 0 120px;
+    // padding: 60px 162px 0 120px;
     max-width: 660px;
 
     &.title {
@@ -270,7 +286,7 @@ body {
 
 }
 .uniup__content {
-    padding: 70px 0 0 0;
+    padding: 50px 0 0 0;
 }
 .uniup__text {
     padding: 10px 0 0 0;
@@ -285,16 +301,16 @@ body {
 
 // typipay
 .typipay {
-    display: flex;
-    min-height: 440px;
-    flex-direction: row;
-    color: #FFFFFF;
-    background-image: url('../img/4.png'), linear-gradient(126.08deg, #A2D7FD 0%, #6DC0FE 100%);;
+    background-image: linear-gradient(126.08deg, #A2D7FD 0%, #6DC0FE 100%);
+}
+.typipay-bg{
+    background-image: url('../img/4.png');
     background-repeat: no-repeat;
     background-position: top 0px right 7%;
+    min-height: 440px;
 }
 .typipay__body {
-    padding: 60px 162px 0 120px;
+    // padding: 60px 162px 0 120px;
     max-width: 660px;
 
     &.title {
@@ -332,7 +348,8 @@ body {
 .typipay__screenshots {
     padding: 80px 0 0 7.5%;
     position: relative;
-    width: 100%;
+    // width: 100%;
+    display: inline-block;
 }
 .typipay__card-screenshot {
     z-index: 20;
@@ -341,7 +358,7 @@ body {
     position: absolute;
     z-index: 30;
     bottom: 0;
-    right: 30%;
+    right: -125px;
 }
 
 // animakuro
@@ -352,7 +369,7 @@ body {
     background: linear-gradient(126.08deg, #42525F 0%, #09121A 100%);
 }
 .animakuro__body {
-    padding: 60px 162px 0 120px;
+    // padding: 60px 162px 0 120px;
     max-width: 660px;
 
     &.title {
@@ -399,7 +416,7 @@ body {
     height: 350px;
 }
 .archive__body {
-    padding: 60px 162px 0 120px;
+    // padding: 60px 162px 0 120px;
     max-width: 660px;
 
     &.title {
@@ -474,6 +491,9 @@ body {
     color: #FFFFFF;
 }
 
+.body{
+    padding: 60px 162px 0 120px;
+}
 .active{
     border-radius: 10px;
     transform: scale3d(0.95, 0.85, 1);
@@ -495,5 +515,125 @@ body {
 section{
     overflow: hidden;
 }
+.section-container{
+    display: flex;
+    max-width: 1600px;
+    min-height: 415px;
+    flex-direction: row;
+    color: #FFFFFF;
+    position: relative;
+    .uniup__body{
+        color: #063551;
+    }
+}
+
+.stick-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end
+}
+
+@media screen and (max-width: $mobile) and (min-width: $mobile_min){
+    .typipay__mobile-screenshot{
+        width: 30%;
+        display: inline-block;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .header__container {
+        padding: 30px 5%;
+    }
+}
+@media screen and (max-width: $tablet){
+    .typipay__content, .uniup__content, .univero__content, .animakuro__content, .archive__content{
+        padding: 25px 0 0 0;
+    }
+    .section-container{
+        display: block;
+    }
+    .desktop-screenshot>img{
+        width: 100%;
+    }
+    .univero__screenshots, .animakuro__screenshots{
+        padding: 25px 0 0 0;
+        max-width: 100%;
+    }
+    .animakuro__mobile-screenshot{
+        display: none;
+    }
+    .univero__mobile-screenshot{
+        right: 50%;
+        width: 50%;
+        transform: translateX(50%);
+        img{
+            width: 100%;
+        }
+    }
+    .univero__desktop-screenshot{
+        opacity: 0.75;
+    }
+    .archive{
+        height: 400px;
+    }
+    .dark_bg{
+        background-color: #fff;
+    }
+    .typipay__mobile-screenshot {
+        right: 50%;
+        img{
+            transform: translateX(153%);
+        }
+    }
+    .typipay__card-screenshot{
+        display: inline-block;
+        transform: translateX(-50%);
+    }
+    .body {
+        max-width: 100%;
+        padding: 24px 9% 0 16px;
+    }
+    .title {
+        font-size: 50px;
+    }
+    .typipay__screenshots{
+        padding: 80px 0 80px 50%;
+        width: 100%;
+    }
+    .title {
+        font-size: 36px;
+    }
+    .designer__body{
+        padding: 0;
+    }
+    .designer__title{
+        padding: 0;
+    }
+    .designer__content{
+        padding: 0 16px;
+    }
+    .designer__hashtags{
+        padding: 16px 15px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: $laptop){
+    .body {
+        max-width: 40%;
+        padding: 60px 9% 0 7%;
+    }
+}
+@media screen and (max-width: $desktop){
+    .body{
+        max-width: 45%;
+    }
+}
+// @media screen and (min-width: $extra_large){
+    .section-container{
+        width: 100%;
+        margin: 0 auto;
+    }
+// }
 
 @import "slider";

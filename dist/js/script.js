@@ -115,7 +115,7 @@ var Slider = function() {
 }());;
 // YAIR EVEN OR
 // 2014
-
+const minwidth = 1050;
 const sections_to_append_active = [
     'univero',
     'uniup',
@@ -130,6 +130,13 @@ var getElementsInArea = (function (docElm) {
         let i;
         // in case of resize
         if (e && e.type == "resize") viewportHeight = docElm.clientHeight;
+        if (docElm.clientWidth<minwidth){
+            for (i = opts.elements.length; i--; ) {
+                let elm = opts.elements[i];
+                elm.classList.toggle(opts.markedClass, false);
+            }
+            return ;
+        }
         // main logic
         for (i = opts.elements.length; i--; ) {
             let elm = opts.elements[i],
@@ -154,6 +161,9 @@ var getElementsOutArea = (function (docElm) {
         let i;
         // in case of resize
         if (e && e.type == "resize") viewportHeight = docElm.clientHeight;
+        if (docElm.clientWidth<minwidth){
+            return ;
+        }
         // main logic
         for (i = opts.elements.length; i--; ) {
             let elm = opts.elements[i],
@@ -181,7 +191,7 @@ function f(e) {
     getElementsInArea(e, {
         elements: document.querySelectorAll("section"),
         markedClass: "active",
-        zone: [30, 30] // percentage distance from top & bottom
+        zone: [40, 40] // percentage distance from top & bottom
     });
 }
 ;
