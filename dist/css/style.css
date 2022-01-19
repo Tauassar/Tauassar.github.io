@@ -728,6 +728,68 @@ body {
      supported by Chrome, Edge, Opera and Firefox */
 }
 
+.separate-pages-body {
+  background-color: #FFFFFF;
+}
+
+.separate-pages-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+header {
+  height: 100px;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.separate-pages-footer {
+  height: 300px;
+}
+
+.separate-pages-footer .footer_email a {
+  color: inherit;
+}
+
+.whatsapp_dark {
+  background-image: url("../img/011-WhatsApp_dark.svg");
+}
+
+.linkedin_dark {
+  background-image: url("../img/009-LinkedIn_dark.svg");
+}
+
+.telegram_dark {
+  background-image: url("../img/010-Telegram_dark.svg");
+}
+
+.center-vertically {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.inherit-height {
+  height: inherit;
+}
+
 @media screen and (max-width: 1300px) {
   .body {
     max-width: 45%;
@@ -759,7 +821,8 @@ body {
   }
 
   .univero__screenshots,
-  .animakuro__screenshots {
+  .animakuro__screenshots,
+  .uniup__screenshots {
     padding: 25px 0 0 0;
     max-width: 100%;
   }
@@ -842,6 +905,7 @@ body {
   .designer__hashtags {
     padding: 16px 15px;
     width: 100%;
+    min-width: 369px;
   }
 }
 

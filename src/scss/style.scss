@@ -556,7 +556,7 @@ section{
     .desktop-screenshot>img{
         width: 100%;
     }
-    .univero__screenshots, .animakuro__screenshots{
+    .univero__screenshots, .animakuro__screenshots, .uniup__screenshots{
         padding: 25px 0 0 0;
         max-width: 100%;
     }
@@ -616,6 +616,7 @@ section{
     .designer__hashtags{
         padding: 16px 15px;
         width: 100%;
+        min-width: 369px;
     }
 }
 @media screen and (max-width: $laptop){
@@ -637,3 +638,4 @@ section{
 // }
 
 @import "slider";
+@import "separate_pages";

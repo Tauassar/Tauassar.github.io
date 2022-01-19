@@ -1,0 +1,41 @@
+.separate-pages-body{
+    background-color: #FFFFFF;
+}
+.separate-pages-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+header{
+    height: 100px;
+}
+
+main{
+    flex: 1 1 auto;
+}
+
+.separate-pages-footer{
+    height: 300px;
+    .footer_email a{
+        color:inherit;
+    }
+}
+
+.whatsapp_dark {
+    background-image: url('../img/011-WhatsApp_dark.svg');
+}
+.linkedin_dark {
+    background-image: url('../img/009-LinkedIn_dark.svg');
+}
+.telegram_dark {
+    background-image: url('../img/010-Telegram_dark.svg');
+}
+
+.center-vertically{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inherit-height{
+    height: inherit;
+}
