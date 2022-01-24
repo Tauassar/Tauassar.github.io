@@ -6,7 +6,6 @@ $laptop: 1200px;
 $desktop: 1300px;
 $extra_large: 1600px;
 
-
 @mixin font($font_name, $file_name, $weight, $style) {
 
     @font-face {
@@ -509,6 +508,9 @@ body {
 
 .dark_bg {
     background-color: #151027;
+    .hashtag{
+        color: #151027;
+    }
 }
 
 section{
@@ -637,4 +639,5 @@ section{
 // }
 
 @import "slider";
+@import "modal";
 @import "separate_pages";
