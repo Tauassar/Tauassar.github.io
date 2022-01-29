@@ -161,7 +161,7 @@ main{
         height: 178px;
         border-radius: 5px 0px 0px 0px;
         background-repeat: no-repeat !important;
-        background-size: contain !important;
+        background-size: 100% !important;
     }
     .univero-grid-3-container-img-1 {
         background: url("../img/14.png");
@@ -183,7 +183,7 @@ main{
     }
     .content-4-frame-container {
         display: grid;
-        width: 967px;
+        max-width: 967px;
         margin: 0 auto;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -195,9 +195,10 @@ main{
         padding-bottom: 60px;
     }
     .img-4-container {
-        width: 240px;
+        width: 100%;
         height: 408px;
         background-repeat: no-repeat !important;
+        background-size: 100% !important;
     }
     .univero-grid-4-container-img-1 {
         background: url("../img/20.png");
@@ -228,8 +229,10 @@ main{
         flex-direction: column;
     }
     .content-image-big {
-        width: 1016px;
+        width: 100%;
         margin: 0 auto;
+        background-size: 100% !important;
+        background-repeat: no-repeat !important;
     }
     .big-img-1 {
         background: url("../img/28.png");
@@ -241,20 +244,24 @@ main{
     }
     .content-images-medium {
         display: flex;
-        height: 663px;
+        height: 515px;
         max-width: 1016px;
         justify-content: space-between;
     }
     .content-medium-img {
-        height: 663px;
+        height: 515px;
+        background-size: 100% !important;
+        background-repeat: no-repeat !important;
     }
     .medium-img-1 {
         background: url("../img/30.png");
-        width: 626px;
+        // width: 626px;
+        width: 100%;
     }
     .medium-img-2 {
         background: url("../img/31.png");
-        width: 361px;
+        // width: 361px;
+        width: 100%;
     }
 }
 
@@ -345,7 +352,7 @@ main{
 
 .big-img-4{
     background: url("../img/47.png");
-    height: 408px;
+    height: 598px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -429,23 +436,105 @@ main{
     height: inherit;
 }
 
+.content-mobile-prev{
+    height: 25px;
+    width: 13px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-image: url('../img/020-arrow-prev-mobile.svg');
+    margin-right: 8px;
+}
+
+.content-mobile-next{
+    height: 25px;
+    width: 13px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-image: url('../img/021-arrow-next-mobile.svg');
+    margin-left: 8px;
+}
+
+.content-mobile-prev-button, .content-mobile-next-button{
+    display: flex;
+    align-items: center;
+}
+
+.content-mobile-navigation-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+.content-mobile-text{
+    font-family: Gilroy-bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.005em;
+    color: rgba(21, 16, 39, 0.6);
+}
 
 // media
 $breakpoint_1: 1149px;
-
+$breakpoint_2: 376px;
+$breakpoint_3: 375px;
 
 @media screen and (max-width: $breakpoint_1){
     main{
         .content-main{
-                padding: 30px 0 80px 0;
+                padding: 30px 0 0 0;
         }
     }
 }
 
-// @media screen and (max-width: $breakpoint_1){
-//     main{
-//         .content-main{
-//                 padding: 30px 30px 80px 30px;
-//         }
-//     }
-// }
+@media screen and (max-width: $breakpoint_2){
+    main{
+        .content-prev-button, .content-next-button{
+            display: none;
+        }
+        .content-description {
+            p:last-child{
+                padding-bottom: 40px;
+            }
+        }
+        .content-text{
+            padding-bottom: 40px;
+        }
+        .content-3-frame-container{
+            margin-bottom: 40px;
+        }
+        .content-4-frame-container{
+            padding-bottom: 40px;
+        }
+        .img-3-container{
+            height: 69px;
+        }
+        .img-4-container{
+            height: 160px;
+        }
+        .big-img-1{
+            height: 162px;
+        }
+        .big-img-2{
+            height: 191px;
+        }
+        .content-images-medium{
+            height: 186px;
+        }
+        .content-medium-img{
+            height: 100%;
+        }
+        .big-img-4{
+            height: 242px;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint_2){
+    main{
+        .content-mobile-navigation-buttons{
+            display: none;
+        }
+    }
+}

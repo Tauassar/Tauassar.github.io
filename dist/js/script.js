@@ -189,7 +189,7 @@ function f(e) {
     getElementsOutArea(e, {
         elements: document.querySelectorAll("section"),
         markedClass: "dark_bg",
-        zone: 30 // percentage distance from top & bottom
+        zone: 50 // percentage distance from top & bottom
     });
 
     getElementsInArea(e, {
