@@ -1,5 +1,6 @@
 // prettier-ignore
-var Slider = function() {
+try{
+    var Slider = function() {
   var total, $images, slider, sliderWidth, increment = 10;
   var on = function() {
     slider = document.getElementsByClassName('slider')[0];
@@ -113,6 +114,9 @@ var Slider = function() {
 (function () {
   const slider = Slider.init();
 }());;
+}catch (e){
+    console.log("ERROR AT SLIDER")
+}
 // YAIR EVEN OR
 // 2014
 const minwidth = 1050;
@@ -185,7 +189,7 @@ function f(e) {
     getElementsOutArea(e, {
         elements: document.querySelectorAll("section"),
         markedClass: "dark_bg",
-        zone: 30 // percentage distance from top & bottom
+        zone: 50 // percentage distance from top & bottom
     });
 
     getElementsInArea(e, {
@@ -212,3 +216,33 @@ testWebP(function (support) {
         document.querySelector('body').classList.add('no-webp');
     }
 });;
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var images = [];
+images = Array.prototype.concat.apply(images, document.getElementsByClassName("content-3-frame-container"));
+images = Array.prototype.concat.apply(images, document.getElementsByClassName("content-3x3-frame-container"));
+images = Array.prototype.concat.apply(images, document.getElementsByClassName("content-3x4-frame-container"));
+images = Array.prototype.concat.apply(images, document.getElementsByClassName("content-4-frame-container"));
+images = Array.prototype.concat.apply(images, document.getElementsByClassName("content-image-block"));
+
+var modalImg = document.getElementById("img01");
+Array.prototype.map.call(images, (elem)=>{
+    elem.onclick = function(e){
+        // img_url = window.getComputedStyle(test, false).backgroundImage.slice(5,-2);
+        modal.style.display = "block";
+        modalImg.src = window.getComputedStyle(e.target, false).backgroundImage.slice(5,-2);;
+    }
+})
+
+// When the user clicks on modal, close the modal
+modal.onclick = function() { 
+    modal.style.display = "none";
+}
+
+modalImg.onclick = function(event) {
+    event.stopPropagation();
+}
+
+;
