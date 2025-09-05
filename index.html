@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Image to Circle Matrix</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 p-6 min-h-screen">
+  <div class="max-w-4xl mx-auto space-y-8">
+    <h1 class="text-3xl font-extrabold text-center text-gray-700 tracking-wide">🎨 Image → Circle Pixel Matrix</h1>
+
+    <!-- Controls -->
+    <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
+      <input id="fileInput" type="file" accept="image/*" class="border p-2 rounded-lg shadow w-full md:w-auto" />
+      <input id="urlInput" type="text" placeholder="Image URL" class="border p-2 rounded-lg shadow w-full md:w-80" />
+      <button onclick="loadUrlImage()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow">Load URL</button>
+    </div>
+
+    <!-- Settings -->
+    <div class="flex flex-wrap gap-4 items-center justify-center">
+      <label class="flex items-center gap-2">Size:
+        <input id="matrixSize" type="number" min="5" max="120" value="40" class="border p-1 w-20 rounded-lg shadow" />
+      </label>
+      <button onclick="processImage()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow">Convert</button>
+      <button onclick="downloadMatrix()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg shadow">Download PNG</button>
+      <button onclick="window.print()" class="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg shadow">Print</button>
+      <button onclick="toggleMode()" id="toggleBtn" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg shadow">Switch to Abbreviations</button>
+      <button onclick="openInNewPage()" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">Open Fullscreen</button>
+    </div>
+
+    <!-- View -->
+    <div class="bg-white border rounded-xl shadow p-4 overflow-auto">
+      <canvas id="canvasColor" class="mx-auto"></canvas>
+    </div>
+
+    <!-- Legend -->
+    <div class="bg-white border rounded-xl shadow p-4">
+      <h2 class="text-lg font-semibold mb-2">Color Legend</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-2">
+        <script>
+          document.write(
+            ["black","silver","gray","white","maroon","red","purple","fuchsia","green","lime","olive","yellow","navy","blue","teal","aqua"]
+              .map(c => `<div class='flex items-center gap-2'><span class='w-5 h-5 rounded-full border' style='background:${c}'></span>${c}</div>`)
+              .join("")
+          );
+        </script>
+      </div>
+    </div>
+
+    <canvas id="hiddenCanvas" class="hidden"></canvas>
+  </div>
+
+<script>
+let img = new Image();
+let showAbbr = false;
+
+const htmlColors = [
+  "black","silver","gray","white","maroon","red","purple","fuchsia",
+  "green","lime","olive","yellow","navy","blue","teal","aqua"
+];
+
+// Map color name to RGB
+function nameToRgb(name) {
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.fillStyle = name;
+  ctx.fillRect(0,0,1,1);
+  const d = ctx.getImageData(0,0,1,1).data;
+  return [d[0],d[1],d[2]];
+}
+
+const palette = htmlColors.map(c => ({name:c, rgb:nameToRgb(c)}));
+
+// Load file
+const fileInput = document.getElementById("fileInput");
+fileInput.addEventListener("change", e => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// Load from URL (fix with crossOrigin)
+function loadUrlImage() {
+  const url = document.getElementById("urlInput").value;
+  if (url) {
+    img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.onload = () => processImage();
+    img.onerror = () => alert("Failed to load image from URL");
+    img.src = url;
+  }
+}
+
+// Find nearest HTML color
+function nearestColor([r,g,b]) {
+  let minD = 1e9, closest = palette[0];
+  for (const p of palette) {
+    let d = (r-p.rgb[0])**2+(g-p.rgb[1])**2+(b-p.rgb[2])**2;
+    if (d < minD) { minD=d; closest=p; }
+  }
+  return closest;
+}
+
+function processImage() {
+  const size = parseInt(document.getElementById("matrixSize").value);
+  const hiddenCanvas = document.getElementById("hiddenCanvas");
+  const ctx = hiddenCanvas.getContext("2d");
+  hiddenCanvas.width = size;
+  hiddenCanvas.height = size;
+  ctx.drawImage(img, 0, 0, size, size);
+  const data = ctx.getImageData(0,0,size,size).data;
+
+  const canvasColor = document.getElementById("canvasColor");
+  const ctxOut = canvasColor.getContext("2d");
+  const cellSize = 15; // smaller circle cells for reasonable output size
+  canvasColor.width = size*cellSize;
+  canvasColor.height = size*cellSize;
+  ctxOut.clearRect(0,0,canvasColor.width,canvasColor.height);
+
+  for (let y=0;y<size;y++) {
+    for (let x=0;x<size;x++) {
+      const idx = (y*size+x)*4;
+      const col = nearestColor([data[idx],data[idx+1],data[idx+2]]);
+
+      if (showAbbr) {
+        ctxOut.beginPath();
+        ctxOut.arc(x*cellSize+cellSize/2, y*cellSize+cellSize/2, cellSize/2-1, 0, Math.PI*2);
+        ctxOut.fillStyle = "#fff";
+        ctxOut.fill();
+        ctxOut.strokeStyle = "#333";
+        ctxOut.stroke();
+
+        ctxOut.fillStyle = "#000";
+        ctxOut.font = `${cellSize/3}px sans-serif`;
+        ctxOut.textAlign = "center";
+        ctxOut.textBaseline = "middle";
+        ctxOut.fillText(col.name, x*cellSize+cellSize/2, y*cellSize+cellSize/2, cellSize);
+      } else {
+        ctxOut.beginPath();
+        ctxOut.arc(x*cellSize+cellSize/2, y*cellSize+cellSize/2, cellSize/2-1, 0, Math.PI*2);
+        ctxOut.fillStyle = col.name;
+        ctxOut.fill();
+        ctxOut.strokeStyle = "#333";
+        ctxOut.stroke();
+      }
+    }
+  }
+}
+
+function toggleMode() {
+  showAbbr = !showAbbr;
+  document.getElementById("toggleBtn").textContent = showAbbr ? "Switch to Colors" : "Switch to Abbreviations";
+  processImage();
+}
+
+function downloadMatrix() {
+  const canvas = document.getElementById("canvasColor");
+  const link = document.createElement("a");
+  link.download = "matrix.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+}
+
+function openInNewPage() {
+  const canvas = document.getElementById("canvasColor");
+  const dataUrl = canvas.toDataURL("image/png");
+  const win = window.open();
+  win.document.write(`<img src='${dataUrl}' style='max-width:100%;height:auto;'/>`);
+}
+</script>
+</body>
+</html>
